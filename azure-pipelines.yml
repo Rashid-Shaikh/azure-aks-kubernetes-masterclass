@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: 'cd07d507-49cf-40be-bb04-72ad267da5da'
   imageRepository: 'app1nginxaks'
   containerRegistry: 'acrforaksdemo3.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/19-Azure-DevOps-with-AKS/19-02-Azure-DevOps-Deploy-to-AKS/**Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'acrforaksdemo31930e1df-auth'
 
