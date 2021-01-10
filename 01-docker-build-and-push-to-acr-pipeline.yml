@@ -40,5 +40,10 @@ stages:
       inputs:
         SourceFolder: '$(Build.SourcesDirectory)/19-Azure-DevOps-with-AKS/19-01-Azure-DevOps-BuildandPush-to-ACR/Git-Repository-files/kube-manifests'
         Contents: '**'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/kube-manifests'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
         OverWrite: true   
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'kube-manifests'
+        publishLocation: 'Container'
